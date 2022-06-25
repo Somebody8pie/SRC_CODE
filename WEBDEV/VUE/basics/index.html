@@ -9,7 +9,28 @@
 </head>
 <body>
     <h1>Starting to learn</h1>
-
+    
+    <div id="app">
+        <!--Now the vue app controls everything in this div-->
+        <h2>{{title}}</h2>
+        <ul>
+            <li>Author: {{author}}</li>
+            <li>Published on: {{publishDate}}</li>
+        </ul>
+        <!--JS code goes in |-->
+        <button v-on:click="publishDateUp">Make the book newer</button>
+        <button v-on:click="publishDateDown">Make the book older</button>
+        <h2>Click Fast - {{clicks}}</h2>
+        <button v-on:click="clicksUp">Click Fast</button>
+        <div v-if="showSneakyCount" >
+            
+            <h2 @click="sneakyCountUp"><strong>Sneaky Count: {{sneakyCount}}</strong></h2>
+        </div>
+        <br>
+        <hr>
+        <br>
+    </div> 
     <script src="./app.js"></script>
 </body>
 </html>
+
