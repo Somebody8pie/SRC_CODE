@@ -20,10 +20,12 @@
         <!--JS code goes in |-->
         <button v-on:click="publishDateUp">Make the book newer</button>
         <button v-on:click="publishDateDown">Make the book older</button>
+
         <h2>Click Fast - {{clicks}}</h2>
         <button v-on:click="clicksUp">Click Fast</button>
+
+        <div @click="toggleShowSneakyCount" style="margin-left: 10in; margin-bottom: 1in;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</div>
         <div v-if="showSneakyCount" >
-            
             <h2 @click="sneakyCountUp"><strong>Sneaky Count: {{sneakyCount}}</strong></h2>
         </div>
         <br>

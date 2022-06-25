@@ -25,7 +25,9 @@ const app = Vue.createApp({
             this.sneakyCount++
             showSneakyCount = true
         },
-
+        toggleShowSneakyCount() {
+            this.showSneakyCount = !this.showSneakyCount
+        },
     }
 })
 
