@@ -12,25 +12,25 @@
     
     <div id="app">
         <!--Now the vue app controls everything in this div-->
-        <h2>{{title}}</h2>
-        <ul>
-            <li>Author: {{author}}</li>
-            <li>Published on: {{publishDate}}</li>
-        </ul>
-        <!--JS code goes in |-->
-        <button v-on:click="publishDateUp">Make the book newer</button>
-        <button v-on:click="publishDateDown">Make the book older</button>
-
+        <a v-bind:href="url">My Youtube</a> <!--You can do :href as well-->
+        <br>
+        <div v-if="showBooks">
+            <h2>My Random Books</h2>
+            <ul>
+                <li v-for="book in books">
+                    <h3>{{ book.title }}</h3>
+                    <p>Author: {{ book.author }}</p>
+                    <p>Published in: {{ book.publishDate }}</p>
+                    <img :src="book.img" :alt="book.title" width="338" height="500">
+                </li>
+            </ul>
+        </div>
+        <button @click="toggleShowBooks">{{textShow}}</button>
         <h2>Click Fast - {{clicks}}</h2>
         <button v-on:click="clicksUp">Click Fast</button>
 
-        <div @click="toggleShowSneakyCount" style="margin-left: 10in; margin-bottom: 1in;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</div>
-        <div v-if="showSneakyCount" >
-            <h2 @click="sneakyCountUp"><strong>Sneaky Count: {{sneakyCount}}</strong></h2>
-        </div>
-        <br>
-        <hr>
-        <br>
+        
+
     </div> 
     <script src="./app.js"></script>
 </body>
