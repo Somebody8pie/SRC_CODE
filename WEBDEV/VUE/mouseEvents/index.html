@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Vue</title>
+    <script src="https://unpkg.com/vue@3"></script>
+    <style>
+        .box {
+            padding: 100px;
+            background-color: grey;
+            margin: 10px;
+            text-align: center;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Starting to learn</h1>
+    
+    <div id="app">
+        <!--Now the vue app controls everything in this div-->
+        <h2>{{title}}</h2>
+        <ul>
+            <li>Author: {{author}}</li>
+            <li>Published on: {{publishDate}}</li>
+        </ul>
+        <!--JS code goes in |-->
+        <button v-on:click="publishDateUp">Make the book newer</button>
+        <button v-on:click="publishDateDown">Make the book older</button>
+
+        <h2>Click Fast - {{clicks}}</h2>
+        <button v-on:click="clicksUp">Click Fast</button>
+
+        <div @click="toggleShowSneakyCount" style="margin-left: 10in; margin-bottom: 1in;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</div>
+        <div v-if="showSneakyCount" >
+            <h2 @click="sneakyCountUp"><strong>Sneaky Count: {{sneakyCount}}</strong></h2>
+        </div>
+        <br>
+        <hr>
+        <br>
+        <!--Different mouse events-->
+        <div class="box" @mouseover="handleEvent($event, 5)">mouseover (hover)</div>
+        <div class="box" @mouseleave="handleEvent">mouseleave</div>
+        <div class="box" @dblclick="handleEvent">double click</div>
+        <div class="box"@mousemove="handleMouseMove">position: x:{{mouseX}} y:{{mouseY}}</div>
+    </div> 
+    <script src="./app.js"></script>
+</body>
+</html>
+
