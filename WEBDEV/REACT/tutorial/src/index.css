@@ -1,13 +1,94 @@
-body {
+*
+{
+  font-family: 'Ubuntu';
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  color: white;
+  background-color: #0f0f0f;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.navbar
+{
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 600px;
+  border-bottom: 3px solid #3636364b;
+}
+.navbar h1 
+{
+  color: orange;
+}
+.navbar .links
+{
+  margin-left: auto;
+}
+.navbar a:not(.new-blog)
+{
+  background-image: linear-gradient(90deg, orange, red);
+
+  background-size: 0% 3px;
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  transition: background-size 300ms ease;
+
+  margin-left: 16px;
+  padding: 10px;
+  text-decoration: none;
+}
+
+.navbar a:hover:not(.new-blog)
+{
+  background-size: 100% 3px;
+}
+.new-blog
+{   
+    padding: 10px;
+    color: white;
+    background-color: orange;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: font-size 100ms ease;;
+    
+}
+.new-blog:hover
+{
+  box-shadow: 0.5px 1px 1px rgb(228, 171, 65);
+  font-size: 18px;
+}
+
+
+.content 
+{
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 6px;
+}
+
+.rate
+{
+  background-color: orange;
+  border-radius: 5px;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  padding: 8px 15px;
+  margin-right: 2px;
+  margin-top: 5px;
+}
+
+.blog-preview
+{
+  padding: 15px;
+  margin: 10px;
+}
+.blog-preview:hover
+{
+  box-shadow: 1px 3px 5px rgb(32, 32, 32);
+}
+
+.blog-preview h2
+{
+  color: orange;
+  margin-bottom: 1em;
 }
