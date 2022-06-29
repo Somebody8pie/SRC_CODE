@@ -10,7 +10,7 @@ const Home = () => {
   ]);
   return (
     <div className="home">
-      <BlogList />
+      <BlogList  blogs={blogs} title="All Blogs"/>
     </div>
   );
 }
