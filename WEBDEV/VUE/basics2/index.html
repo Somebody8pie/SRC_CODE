@@ -6,22 +6,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Learning Vue</title>
     <script src="https://unpkg.com/vue@3"></script>
+    <style>
+        body {
+            background: rgb(27, 27, 27);
+            max-width: 960px;
+            margin: 20px auto;
+            color: white;
+            font-family: Calibri, sans-serif;
+        }
+        p, h3, ul{
+            padding: none;
+            margin: none;
+        }
+        li {
+            list-style-type: none;
+            background: rgb(88, 88, 88);
+            margin: 20px auto;
+            padding: 10px 20px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between  ;
+        }
+        a {
+            color: blue;
+        }
+        .book-title {
+            text-align: center;
+        }
+        li.fav {
+            background: rgb(196, 196, 120);
+        }
+    </style>
 </head>
 <body>
     <h1>Starting to learn</h1>
     
     <div id="app">
         <!--Now the vue app controls everything in this div-->
+        <p>{{ filteredBooks.title }}</p>
         <a v-bind:href="url">My Youtube</a> <!--You can do :href as well-->
         <br>
         <div v-if="showBooks">
             <h2>My Random Books</h2>
             <ul>
-                <li v-for="book in books">
-                    <h3>{{ book.title }}</h3>
+                <li v-for="book in filteredBooks" :class="{ fav: book.isFav }">
+                    <h1 class="book-title">{{ book.title }}</h3>
                     <p>Author: {{ book.author }}</p>
                     <p>Published in: {{ book.publishDate }}</p>
-                    <img :src="book.img" :alt="book.title" width="338" height="500">
+                    <img :src="book.img" :alt="book.title" width="338" height="500" @click="toggleFav(book)">
                 </li>
             </ul>
         </div>

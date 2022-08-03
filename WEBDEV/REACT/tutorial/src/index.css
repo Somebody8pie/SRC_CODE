@@ -14,7 +14,7 @@
   margin: 0 auto;
   max-width: 600px;
   border-bottom: 3px solid #3636364b;
-  margin-bottom: 10vh;
+  margin-bottom: none;
 }
 .navbar h1 
 {
@@ -77,4 +77,35 @@
 {
   color: orange;
   margin-bottom: 1em;
+}
+
+.blog-list-title
+{
+  margin-top: 100px;
+}
+
+.delete-blog
+{
+  margin-top: 10px;
+  border: none;
+  transition: 0.2s;
+}
+
+.delete-blog:hover
+{
+  transform: scale(1.2);
+  background-color: red;
+  border-radius: 2px;
+}
+
+.trash-icon
+{
+  transition: 0.2s;
+  font-size: 20px;
+}
+
+.trash-icon:hover
+{
+  background-color: red;
+  transform: scale(1.2);
 }

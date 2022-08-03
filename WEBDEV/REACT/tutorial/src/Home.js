@@ -4,13 +4,21 @@ import BlogList from "./BlogList";
 const Home = () => {
   const [blogs, setBlogs] = useState([
     { title: "I'm learning React.js!", body: "Yes I am starting to learn React.js", author: 'Somebody8pie', id: 0 },
-    { title: "I got a great Discord server!", body: `Join it https://discord.gg/xdWK2rkPMr`, author: 'Somebody8pie', id: 1 },
+    { title: "I got a great Discord server!", body: `Join it https://discord.gg/xdWK2rkPMr`, author: 'Somebody8banana', id: 1 },
     { title: "I really like Pie", body: "Hi, I'm Somebody8pie and I really like Pie especially pumpkin pie!", author: 'Somebody8pie', id: 2 },
 
   ]);
+  // Takes in the id of the blog were the delete button was clicked
+  const handleDelete = (id) => {
+    const newBlogs = blogs.filter(blog => blog.id !== id); // filters out the array and makes a new one without that blog
+    setBlogs(newBlogs); // and sets it to the new list of blogs without that one
+  }
+
   return (
     <div className="home">
-      <BlogList  blogs={blogs} title="All Blogs"/>
+      <BlogList  blogs={blogs} title="All Blogs"  handleDelete={handleDelete}/>
+      {/*   this anonyms function returns true if author pie |*/}
+      <BlogList  blogs={blogs.filter((blog) => blog.author === 'Somebody8pie')} title="Pie's Blogs" handleDelete={handleDelete}/>  
     </div>
   );
 }
